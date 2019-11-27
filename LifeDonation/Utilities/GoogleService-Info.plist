@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1323361389-4uaflcr3q6o4p4usq7cm0hv3udcdj88k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1323361389-4uaflcr3q6o4p4usq7cm0hv3udcdj88k</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBrsPi-pWddDcS9ZiqsxuqCH1rABr3U7Bk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1323361389</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.yildizuysal.LifeDonation</string>
+	<key>PROJECT_ID</key>
+	<string>lifedonation-d3f48</string>
+	<key>STORAGE_BUCKET</key>
+	<string>lifedonation-d3f48.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1323361389:ios:4611aa182d7cc88d0a8b64</string>
+	<key>DATABASE_URL</key>
+	<string>https://lifedonation-d3f48.firebaseio.com</string>
+</dict>
+</plist>

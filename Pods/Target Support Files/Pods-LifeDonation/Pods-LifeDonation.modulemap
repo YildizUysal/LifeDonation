@@ -1,0 +1,6 @@
+framework module Pods_LifeDonation {
+  umbrella header "Pods-LifeDonation-umbrella.h"
+
+  export *
+  module * { export * }
+}
