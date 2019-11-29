@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class SearchDetailsViewController: UIViewController {
     
     // MARK: - UI Elements
     @IBOutlet weak var callBarButton: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var sharingName: UILabel!
     @IBOutlet weak var patientNameLabel: UILabel!
     @IBOutlet weak var bloodImageView: UIImageView!
     @IBOutlet weak var patientNearNameLabel: UILabel!
@@ -24,20 +24,20 @@ class SearchDetailsViewController: UIViewController {
     
     //MARK: - Properties
     var phoneNumber : String?
+    var databaseReference = Database.database().reference(withPath: "Users")
     var announce : Announcement!
     var alerPresent : AlertPresenter!
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         alerPresent = AlertPresenter(controller: self)
         fullFill()
     }
     
     //MARK: - Function
     func fullFill() {
-        sharingName.text = announce.sharingUID
+        print("deneme")
         patientNameLabel.text = announce.patientName
         patientNearNameLabel.text = announce.patientNearName
         let imageName = announce.bloodType?.textToImage()
@@ -59,13 +59,13 @@ class SearchDetailsViewController: UIViewController {
                     UIApplication.shared.openURL(url)
                 }
             } else {
-                let title = "İşlem Başarısız"
-                let  message = "Telefon numarasında hata var"
+                let title = "Operation Failed"
+                let  message = "Error in phone number"
                 alerPresent.presentAlert(title: title, message: message)
             }
         } else {
-            let title = "İşlem Başarısız"
-            let  message = "Telefon numarasında hata var"
+            let title = "Operation Failed"
+            let  message = "Error in phone number"
             alerPresent.presentAlert(title: title, message: message)
         }
     }

@@ -123,14 +123,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             let uid = Auth.auth().currentUser!.uid
             let newFavRef = Database.database()
                 .reference().child("Users").child(uid).child("Favorite").childByAutoId().ref
-            let announceDictionary = ["sharingUID" : favoriAnnounce.sharingUID,
-                                      "patientName" : favoriAnnounce.patientName,
-                                      "bloodType" : favoriAnnounce.bloodType?.rawValue,
-                                      "hospitalName" : favoriAnnounce.hospitalName,
-                                      "patientNearName" : favoriAnnounce.patientNearName,
-                                      "contactNumber" : favoriAnnounce.contactNumber,
-                                      "province" : favoriAnnounce.province,
-                                      "note" : favoriAnnounce.note
+            let announceDictionary = ["sharingUID" : favoriAnnounce.sharingUID as Any,
+                                      "patientName" : favoriAnnounce.patientName as Any,
+                                      "bloodType" : favoriAnnounce.bloodType?.rawValue as Any,
+                                      "hospitalName" : favoriAnnounce.hospitalName as Any,
+                                      "patientNearName" : favoriAnnounce.patientNearName as Any,
+                                      "contactNumber" : favoriAnnounce.contactNumber as Any,
+                                      "province" : favoriAnnounce.province as Any,
+                                      "note" : favoriAnnounce.note as Any
                       ] as [String : Any]
             newFavRef.setValue(announceDictionary)
             }

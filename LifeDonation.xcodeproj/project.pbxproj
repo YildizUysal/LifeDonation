@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0606553A238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06065539238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift */; };
 		06219817238E90AC005B5C82 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06219816238E90AC005B5C82 /* History.swift */; };
 		06219819238E9267005B5C82 /* DateFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06219818238E9267005B5C82 /* DateFormat.swift */; };
 		063A3DCF238DA81A00C6E1E1 /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A3DCE238DA81A00C6E1E1 /* BloodType.swift */; };
@@ -28,6 +29,7 @@
 		068AEF11237EFB9800568394 /* AnnouncementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068AEF10237EFB9800568394 /* AnnouncementViewController.swift */; };
 		06B1F140237D44E10030AA67 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06B1F13F237D44E10030AA67 /* Home.storyboard */; };
 		06B6D80323806BA800CD6303 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6D80223806BA800CD6303 /* Announcement.swift */; };
+		06BAB43F23913AAC00978877 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BAB43E23913AAC00978877 /* ProfileCollectionViewCell.swift */; };
 		06CE9FE9238E778000C74898 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CE9FE8238E778000C74898 /* SettingsViewController.swift */; };
 		06DAC834238E8EF00031A7D3 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DAC833238E8EF00031A7D3 /* HistoryViewController.swift */; };
 		06DAC837238E8F130031A7D3 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DAC836238E8F130031A7D3 /* HistoryDetailViewController.swift */; };
@@ -35,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06065539238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		06219816238E90AC005B5C82 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		06219818238E9267005B5C82 /* DateFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormat.swift; sourceTree = "<group>"; };
 		063A3DCE238DA81A00C6E1E1 /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
@@ -58,6 +61,7 @@
 		068AEF10237EFB9800568394 /* AnnouncementViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementViewController.swift; sourceTree = "<group>"; };
 		06B1F13F237D44E10030AA67 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		06B6D80223806BA800CD6303 /* Announcement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Announcement.swift; sourceTree = "<group>"; };
+		06BAB43E23913AAC00978877 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		06CE9FE8238E778000C74898 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		06DAC833238E8EF00031A7D3 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		06DAC836238E8F130031A7D3 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				0641CAA62378814600035884 /* CustomUIButton.swift */,
 				06793AA123809D3A00CAA113 /* HomeSearchTableViewCell.swift */,
 				06219818238E9267005B5C82 /* DateFormat.swift */,
+				06065539238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift */,
+				06BAB43E23913AAC00978877 /* ProfileCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 				068AEF11237EFB9800568394 /* AnnouncementViewController.swift in Sources */,
 				0678F15E2378691B00057074 /* LoginViewController.swift in Sources */,
 				064EB21D237C68A6006CD637 /* SearchViewController.swift in Sources */,
+				06BAB43F23913AAC00978877 /* ProfileCollectionViewCell.swift in Sources */,
 				06DAC834238E8EF00031A7D3 /* HistoryViewController.swift in Sources */,
 				0641CAA92378877D00035884 /* User.swift in Sources */,
 				06CE9FE9238E778000C74898 /* SettingsViewController.swift in Sources */,
@@ -368,6 +375,7 @@
 				06814D1F2381600100E67851 /* SearchDetailsViewController.swift in Sources */,
 				0678F15A2378691B00057074 /* AppDelegate.swift in Sources */,
 				063A3DCF238DA81A00C6E1E1 /* BloodType.swift in Sources */,
+				0606553A238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift in Sources */,
 				0678F15C2378691B00057074 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

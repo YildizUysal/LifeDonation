@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import UserNotificationsUI
+import UserNotifications
 
 class LoginViewController: UIViewController {
 
@@ -23,6 +25,8 @@ class LoginViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound,.badge]) { (sucess, _) in }
         
         alertPresenter = AlertPresenter(controller: self)
         let userData  = storage.value(forKey: "user") as? Data

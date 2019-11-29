@@ -10,16 +10,18 @@ import Foundation
 
 struct History {
     
+    var autoID : String?
     var height : String?
     var weight : String?
     var hemoglobin : String?
     var date : String?
     
     init(dictionary : [String : Any]) {
+        autoID = dictionary["autoID"] as? String
         height = dictionary["height"] as? String
         weight = dictionary["weight"] as? String
         hemoglobin = dictionary["hemoglobinValue"] as? String
-        date = dictionary["historyDate"] as? String
+        date = dictionary["date"] as? String
     }
     
 }
