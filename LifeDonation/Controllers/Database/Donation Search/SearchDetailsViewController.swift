@@ -37,7 +37,6 @@ class SearchDetailsViewController: UIViewController {
     
     //MARK: - Function
     func fullFill() {
-        print("deneme")
         patientNameLabel.text = announce.patientName
         patientNearNameLabel.text = announce.patientNearName
         let imageName = announce.bloodType?.textToImage()
@@ -74,5 +73,4 @@ class SearchDetailsViewController: UIViewController {
     @IBAction func callBarButtonTapped(_ sender: UIBarButtonItem) {
         dialNumber()
     }
-    
 }

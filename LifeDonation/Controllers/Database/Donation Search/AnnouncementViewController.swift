@@ -34,6 +34,11 @@ class AnnouncementViewController: UIViewController {
         super.viewDidLoad()
         alertPresent = AlertPresenter(controller: self)
         bloodTypeTextField.inputView = bloodTypePickerView
+        patientNearNameTextField.inputAccessoryView = toolBar
+        hospitalNameTextField.inputAccessoryView = toolBar
+        contactNumberTextField.inputAccessoryView = toolBar
+        provinceTextField.inputAccessoryView = toolBar
+        noteTextField.inputAccessoryView = toolBar
         bloodTypeTextField.inputAccessoryView = toolBar
         patientNameTextField.inputAccessoryView = toolBar
     }
@@ -49,8 +54,8 @@ class AnnouncementViewController: UIViewController {
     
     @IBAction func addAnnouncementButtonTapped(_ sender: UIButton) {
         guard let category = Announcement.DonationCategory.init(rawValue: categorySegmentedControl.selectedSegmentIndex) else {
-            let title = "İşlem Başarısız"
-            let message = "Alanları doldurun. Kontrol edip tekrar deneyin."
+            let title = "Operation Failed"
+            let message = "Fill in the fields. Check and try again."
             alertPresent.presentAlert(title: title, message: message)
             return
         }
@@ -64,8 +69,8 @@ class AnnouncementViewController: UIViewController {
             !bloodType.isEmpty, !patientName.isEmpty, !note.isEmpty, !hospitalName.isEmpty,
             !province.isEmpty, !patientNearName.isEmpty, !contactNumber.isEmpty
             else {
-                let title = "İşlem Başarısız"
-                let message = "Alanları doldurun. Kontrol edip tekrar deneyin."
+                let title = "Operation Failed"
+                let message = "Fill in the fields. Check and try again."
                 alertPresent.presentAlert(title: title, message: message)
                 return
         }
@@ -95,6 +100,7 @@ class AnnouncementViewController: UIViewController {
     
 }
 
+// MARK: PickerView
 extension AnnouncementViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

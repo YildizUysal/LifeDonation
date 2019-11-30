@@ -97,11 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				064EB21A237B0D87006CD637 /* AlertPresenter.swift */,
-				0641CAA62378814600035884 /* CustomUIButton.swift */,
-				06793AA123809D3A00CAA113 /* HomeSearchTableViewCell.swift */,
 				06219818238E9267005B5C82 /* DateFormat.swift */,
-				06065539238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift */,
-				06BAB43E23913AAC00978877 /* ProfileCollectionViewCell.swift */,
+				0641CAA62378814600035884 /* CustomUIButton.swift */,
+				06BACD6E239262400035A2AD /* Table View Cell */,
+				06BACD6F239262480035A2AD /* Collection View Cell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,6 +191,23 @@
 				06DAC831238E8ECA0031A7D3 /* Profile */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		06BACD6E239262400035A2AD /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06793AA123809D3A00CAA113 /* HomeSearchTableViewCell.swift */,
+				06065539238FAA4800C41EC6 /* CustomHistoryTableViewCell.swift */,
+			);
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
+		06BACD6F239262480035A2AD /* Collection View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				06BAB43E23913AAC00978877 /* ProfileCollectionViewCell.swift */,
+			);
+			path = "Collection View Cell";
 			sourceTree = "<group>";
 		};
 		06DAC82F238E8EA40031A7D3 /* Donation Search */ = {

@@ -29,7 +29,9 @@ class SearchViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        self.tableView.reloadData()
+        UIView.animate(withDuration: 0.3) {
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: - Function
@@ -90,6 +92,7 @@ class SearchViewController: UIViewController {
     }
 }
 
+// MARK: - TableView
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -140,9 +143,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
                 addFavAction.image = UIImage(named: "plus")
             }
         addFavAction.backgroundColor = .some(UIColor(named: "baseColor")!)
-            
         let configuration = UISwipeActionsConfiguration(actions: [addFavAction])
-            
         return configuration
     }
     

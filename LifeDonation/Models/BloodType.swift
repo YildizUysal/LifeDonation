@@ -18,7 +18,9 @@ enum BloodType : String , CaseIterable, Codable {
          case abPositiveType = "AB RH(+)"
          case abNegativeType = "AB RH(-)"
       
+    
       func textToImage() -> String {
+        // Bu fonksiyon sisteme kayıtlı olan enum case'ini sistemdeki isime dönüştürür.
           var imageName = ""
                   switch self {
                   case .abNegativeType:

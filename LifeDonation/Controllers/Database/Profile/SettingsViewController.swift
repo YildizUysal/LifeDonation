@@ -34,11 +34,12 @@ class SettingsViewController: UIViewController {
         storageReference = Storage.storage().reference(withPath: "UserImages")
         alertPresent = AlertPresenter(controller: self)
         settingsSection.append(
-            (title: "Profile", content: ["Update Profile Picture",
-                                         "Update Personal Information",
-                                         //"Update Login Information",
+            (title: "Profile", content: [
+                "Update Profile Picture",
+                "Update Personal Information",
+                //"Update Login Information",
                 "Update Contact Information",
-                //"Update Notification"
+                "Update Notification"
             ]))
     }
     
@@ -141,10 +142,10 @@ class SettingsViewController: UIViewController {
             alert.addTextField { (textField) in
                 textField.placeholder = "phoneNumber"
             }
-            //        case "Update Notification":
-            //            alert.addTextField { (textField) in
-            //                textField.placeholder = "Notification Second"
-        //            }
+        case "Update Notification":
+            alert.addTextField { (textField) in
+                textField.placeholder = "Notification Second"
+            }
         default:
             break
         }
@@ -153,7 +154,7 @@ class SettingsViewController: UIViewController {
             for textfields in alert.textFields! {
                 let firebaseValue = textfields.text
                 let firebaseKey = textfields.placeholder
-                if firebaseKey == "Update Notification" {
+                if firebaseKey == "Notification Second" {
                     self?.triggerDelay = Int(firebaseValue!) ?? 5
                 } else {
                     self?.updateFirebaseData(childName: firebaseKey ?? "", childValue: firebaseValue ?? "")
@@ -166,7 +167,7 @@ class SettingsViewController: UIViewController {
     }
 }
 
-// MARK : ImagePicker
+// MARK: - ImagePicker
 extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let editImage = info[.editedImage] as? UIImage {
@@ -187,7 +188,7 @@ extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationC
     }
 }
 
-// MARK : TableView
+// MARK: - TableView
 extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return settingsSection.count
@@ -223,7 +224,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-// MARK : Notification
+// MARK: - Notification
 extension SettingsViewController: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)

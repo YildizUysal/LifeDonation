@@ -94,7 +94,7 @@ class ProfileViewController: UIViewController {
                 !email.isEmpty, !firstName.isEmpty, !phoneNumber.isEmpty, !address.isEmpty,
                 !birthDate.isEmpty, !lastName.isEmpty else {
                     let title = "Error"
-                    let message = "Profil Bilgisi Alınamıyor."
+                    let message = "Unable to Get Profile Information."
                     alertPresent?.presentAlert(title: title, message: message)
                     return
             }
@@ -122,6 +122,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: CollectionView
 extension ProfileViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return favoriteAnnounce.count

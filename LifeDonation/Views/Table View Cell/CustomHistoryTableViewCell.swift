@@ -9,12 +9,13 @@
 import UIKit
 
 class CustomHistoryTableViewCell: UITableViewCell {
-
-    // MARK : IBOutlet Elements
+    
+    // MARK : UI Elements
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var hemoglobinValueLabel: UILabel!
     
+    //MARK: - Function
     func prepareForDrawing(history : History){
         dateLabel.text = history.date
         if history.weight != ""  && history.height != "" {

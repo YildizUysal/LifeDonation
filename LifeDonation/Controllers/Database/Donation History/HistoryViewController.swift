@@ -41,13 +41,11 @@ class HistoryViewController: UIViewController {
                 self.tableView.alpha = 1
                 self.infoView.alpha = 0
             }
-        }
-        else {
+        } else {
             UIView.animate(withDuration: 0.5) {
-                           self.tableView.alpha = 0
-                           self.infoView.alpha = 1
+                self.tableView.alpha = 0
+                self.infoView.alpha = 1
             }
-
         }
     }
     
@@ -120,9 +118,8 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
                 self.historyArray.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .automatic)
             } else {
-                self.alertPresenter.presentAlert(title: "İşlem Hatası", message: "Küçük bir sorun oldu daha sonra tekrar deneyin.")
+                self.alertPresenter.presentAlert(title: "Process Error", message: "There was a small problem, try again later.")
             }
-
             self.elementShowFunc()
             completed(true)
         }

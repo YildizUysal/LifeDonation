@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeSearchTableViewCell: UITableViewCell {
-
+    
     // MARK: - UI Elements
     @IBOutlet weak var patientNameLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!

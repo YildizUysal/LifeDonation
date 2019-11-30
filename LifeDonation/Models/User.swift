@@ -9,7 +9,8 @@
 import Foundation
 
 struct User: Codable {
-    
+        
+    //MARK: - Properties
     var uid : String?
     var firstName   : String?
     var imageName   : String?
@@ -22,6 +23,7 @@ struct User: Codable {
     var address     : String?
     var phoneNumber : String?
     
+    //MARK: - Enum
     enum Gender: Int, CaseIterable, Codable {
         case female = 0
         case male = 1
@@ -39,6 +41,7 @@ struct User: Codable {
         }
     }
     
+    //MARK: - init
     init(dictionary: [String: Any]) {
         uid         = dictionary["uid"] as? String
         imageName   = dictionary["imageName"] as? String

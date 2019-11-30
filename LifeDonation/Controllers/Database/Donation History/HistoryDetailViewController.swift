@@ -9,7 +9,7 @@
 import UIKit
 
 class HistoryDetailViewController: UIViewController {
-
+    
     // MARK: - UI Elements
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -37,21 +37,13 @@ class HistoryDetailViewController: UIViewController {
         dateTextField.inputAccessoryView = toolBar
     }
     
-    //MARK: - Function
-    
     //MARK: - Actions
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         hemoglobin = hemoglobinValueTextField.text
         date = dateTextField.text
         weight = weightTextField.text
         height = heightTextField.text
-//        if {
         performSegue(withIdentifier: "goBackToHistory", sender: nil)
-//        } else {
-//            let title = "İşlem Başarısız"
-//            let message = "Bütün alanları doldurun."
-//            alertPresent?.presentAlert(title: title, message: message)
-//        }
     }
     
     @IBAction func clearButtonTapped(_ sender: UIButton) {
@@ -63,12 +55,10 @@ class HistoryDetailViewController: UIViewController {
     
     @IBAction func datePickerValueChange(_ sender: UIDatePicker) {
         let formatterString = DateFormat.formatter(selectedDate: datePicker.date)
-              dateTextField.text = formatterString
+        dateTextField.text = formatterString
     }
     
     @IBAction func stopBarButtonTapped(_ sender: UIBarButtonItem) {
         view.endEditing(true)
     }
-    
-
 }

@@ -15,12 +15,12 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hospitalNameLabel: UILabel!
     @IBOutlet weak var patientNameLabel: UILabel!
     @IBOutlet weak var patientBloodImage: UIImageView!
-       
-       // MARK: - Functions
-       func prepareForDrawing(announce: Announcement) {
+    
+    // MARK: - Functions
+    func prepareForDrawing(announce: Announcement) {
         phoneLabel.text = announce.contactNumber
         patientBloodImage.image = UIImage(named: (announce.bloodType?.textToImage())!)
         hospitalNameLabel.text = announce.hospitalName
         patientNameLabel.text = announce.patientName
-       }
+    }
 }

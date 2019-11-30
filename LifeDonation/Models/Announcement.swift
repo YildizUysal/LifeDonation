@@ -10,6 +10,7 @@ import Foundation
 
 struct Announcement {
     
+    //MARK: - Properties
     var sharingUID : String?
     var patientName : String?
     var bloodType: BloodType?
@@ -20,6 +21,7 @@ struct Announcement {
     var province: String?
     var note: String?
     
+    //MARK: - Enum
     enum DonationCategory : Int , CaseIterable {
               case kan = 0
               case aferez = 1
@@ -37,6 +39,7 @@ struct Announcement {
               }
           }
     
+    //MARK: - init
     init(dictionary: [String: Any]) {
         sharingUID      = dictionary["sharingUID"] as? String
         patientName     = dictionary["patientName"] as? String

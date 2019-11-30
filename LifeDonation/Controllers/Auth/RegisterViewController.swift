@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class RegisterViewController: UIViewController {
-
+    
     // MARK: - UI Elements
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -32,21 +32,22 @@ class RegisterViewController: UIViewController {
     //MARK: - Properties
     var storage = UserDefaults.standard
     var databaseReferance : DatabaseReference!
-//    var storageReferance : StorageReference!
     var alertPresenter : AlertPresenter!
     var user : User?
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        firstNameTextField.inputAccessoryView = barToolBar
+        lastNameTextField.inputAccessoryView = barToolBar
+        phoneNumberTextField.inputAccessoryView = barToolBar
+        emailTextField.inputAccessoryView = barToolBar
+        passwordTextField.inputAccessoryView = barToolBar
+        addressTextField.inputAccessoryView = barToolBar
         birthDateTextField.inputView = birthDatePicker
         birthDateTextField.inputAccessoryView = barToolBar
-        
         bloodTypeTextField.inputView = bloodTypePicker
         bloodTypeTextField.inputAccessoryView = barToolBar
-        
-//      storageReferance = Storage.storage().reference(withPath: "Images")
         databaseReferance = Database.database().reference(withPath: "Users")
         
         alertPresenter = AlertPresenter(controller: self)
@@ -55,66 +56,66 @@ class RegisterViewController: UIViewController {
     //MARK: - Actions
     @IBAction func registerButtonTapped(_ sender: UIButton) {
         guard let email = emailTextField.text,
-        let password = passwordTextField.text,
-        let phoneNumber = phoneNumberTextField.text,
-        let bloodType = bloodTypeTextField.text,
-        let gender = User.Gender(rawValue: genderSegmentedControl.selectedSegmentIndex)?.textValue(),
-        let address = addressTextField.text,
-        let firstName = firstNameTextField.text,
-        let lastName = lastNameTextField.text,
-        let birthDate = birthDateTextField.text,
-        !bloodType.isEmpty, !address.isEmpty, !email.isEmpty,
-        !firstName.isEmpty, !birthDate.isEmpty, !phoneNumber.isEmpty,
-        !lastName.isEmpty, !password.isEmpty  else {
-                let title = "İşlem Başarısız"
-                let message = "İşleminiz gerçekleşmiyor. Email ve Şifre giriniz."
+            let password = passwordTextField.text,
+            let phoneNumber = phoneNumberTextField.text,
+            let bloodType = bloodTypeTextField.text,
+            let gender = User.Gender(rawValue: genderSegmentedControl.selectedSegmentIndex)?.textValue(),
+            let address = addressTextField.text,
+            let firstName = firstNameTextField.text,
+            let lastName = lastNameTextField.text,
+            let birthDate = birthDateTextField.text,
+            !bloodType.isEmpty, !address.isEmpty, !email.isEmpty,
+            !firstName.isEmpty, !birthDate.isEmpty, !phoneNumber.isEmpty,
+            !lastName.isEmpty, !password.isEmpty  else {
+                let title = "Operation Failed"
+                let message = "Your operation can not take place. Enter Email and Password."
                 self.alertPresenter.presentAlert(title: title, message: message)
-                    return
-            }
-             activityIndicator.startAnimating()
-             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                 if error == nil && result?.user != nil {
-                    let uid = Auth.auth().currentUser?.uid
-                    let imageName = ""
-                    let userDictionary = [
-                                            "uid": uid as Any,
-                                            "firstName" : firstName,
-                                            "imageName" : imageName,
-                                            "lastName" : lastName,
-                                            "email" : email,
-                                            "password" : password,
-                                            "birthDate" : birthDate,
-                                            "bloodType" : bloodType,
-                                            "gender" : gender,
-                                            "address" : address,
-                                            "phoneNumber" : phoneNumber
-                                        ] as [String : Any]
-                    self.user = User(dictionary: userDictionary)
-                    self.databaseReferance.child(uid!).setValue(userDictionary) { (error, dataRef) in
+                return
+        }
+        activityIndicator.startAnimating()
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if error == nil && result?.user != nil {
+                let uid = Auth.auth().currentUser?.uid
+                let imageName = ""
+                let userDictionary = [
+                    "uid": uid as Any,
+                    "firstName" : firstName,
+                    "imageName" : imageName,
+                    "lastName" : lastName,
+                    "email" : email,
+                    "password" : password,
+                    "birthDate" : birthDate,
+                    "bloodType" : bloodType,
+                    "gender" : gender,
+                    "address" : address,
+                    "phoneNumber" : phoneNumber
+                    ] as [String : Any]
+                self.user = User(dictionary: userDictionary)
+                self.databaseReferance.child(uid!).setValue(userDictionary) { (error, dataRef) in
                     if error == nil {
                         let encoder = JSONEncoder()
-                            do {
+                        do {
                             let contactData = try encoder.encode(self.user)
                             self.storage.setValue(contactData, forKey: "user")
-                            } catch {
-                                print(error)
-                            }
+                        } catch {
+                            print(error)
+                        }
                     } else {
                         print("Database işlemi hatalı")
                         print("Kişi kaydedilmedi.")
                         self.activityIndicator.stopAnimating()
-                        }
                     }
-                    self.activityIndicator.stopAnimating()
-                     let title = "İşlem Başarılı"
-                     let message = "İşleminiz gerçekleşti. Artık uygulamayı kullanmaya başlayabilirsiniz."
-                    self.alertPresenter.presentAlertwithIdentifier(title: title, message: message, identifier: "RegisterToHome")
-                 }
-                 self.activityIndicator.stopAnimating()
-                 let title = "İşlem Başarısız"
-                 let message = "Email ve Şifre Yanlış olabilir."
-                 self.alertPresenter.presentAlert(title: title, message: message)
+                }
+                self.activityIndicator.stopAnimating()
+                let title = "Operation Successful"
+                let message = "Your operation has been completed. You can now start using the app."
+                self.alertPresenter.presentAlertwithIdentifier(title: title, message: message, identifier: "RegisterToHome")
             }
+            self.activityIndicator.stopAnimating()
+            let title = "Operation Failed"
+            let message = "Email and Password may be wrong."
+            self.alertPresenter.presentAlert(title: title, message: message)
+        }
     }
     
     @IBAction func dateTimePickerChanged(_ sender: UIDatePicker) {
@@ -127,14 +128,14 @@ class RegisterViewController: UIViewController {
             dismiss(animated: true, completion: nil)
         }
         else if sender.tag == 1 {
-             view.endEditing(true)
+            view.endEditing(true)
         }
     }
     
-
+    
 }
 
-
+// MARK: - PickerView
 extension RegisterViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -10,12 +10,12 @@ import Foundation
 
 class DateFormat {
     
-   static func formatter(selectedDate: Date) -> String{
+    static func formatter(selectedDate: Date) -> String{
         let dateFormatter = DateFormatter()
-                  dateFormatter.dateFormat = "dd MMM yyyy"
+        dateFormatter.dateFormat = "dd MMM yyyy"
         let selectedDate = selectedDate 
         let formatterString = dateFormatter.string(from: selectedDate)
         return formatterString
     }
-   
+    
 }
